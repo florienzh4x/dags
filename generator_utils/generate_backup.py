@@ -1,4 +1,3 @@
-import os, json
 import shutil
 
 class GenerateBackup:

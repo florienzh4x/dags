@@ -3,7 +3,6 @@ import json
 from airflow.models import Variable
 from faker import Faker
 import random
-from datetime import datetime
 from generator_utils.generate_backup import GenerateBackup
 from generator_utils.generate_file import GenerateFile
 from generator_utils.metadata import Metadata

@@ -1,8 +1,3 @@
-import os, json
-import random
-from faker import Faker
-
-
 class GenerateFile:
     
     def make_file(self, filename, context):

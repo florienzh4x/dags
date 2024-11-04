@@ -47,8 +47,3 @@ class GenerateFolder:
             print(str(err))
             
         ti.xcom_push(key="folder_list", value=folder_list)
-        # return folder_list
-                
-        
-            
-        

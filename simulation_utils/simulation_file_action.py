@@ -1,17 +1,8 @@
-import shutil, json, os, random, csv
-from pathlib import Path
-from airflow.models import Variable
-
+import os, random, csv
 from scanner_utils.scanner import Scanner
 
 class SimulationAction:
     def __init__(self):
-        
-        # Get metadata absolute path from airflow variables
-        # metadata_path_env = Variable.get('DIRECTORY_PATH')
-        # metadata_path_json = json.loads(metadata_path_env)
-        
-        # self.metadata_abs_path = metadata_path_json.get('metadata_folder')
         
         self.to_consume = Scanner.pick_csv_file()
         # self.to_consume = ['/opt/airflow/plugins/wisnu/user_patricia/test.csv']

@@ -1,4 +1,4 @@
-import shutil, json, os, random
+import json, os
 from datetime import datetime
 from airflow.models import Variable
 
