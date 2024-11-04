@@ -1,9 +1,10 @@
-import os, random, csv
+import shutil, json, os, random, csv
+from pathlib import Path
+
 from scanner_utils.scanner import Scanner
 
 class SimulationAction:
-    def __init__(self):
-        
+    def __init__(self):      
         self.to_consume = Scanner.pick_csv_file()
         # self.to_consume = ['/opt/airflow/plugins/wisnu/user_patricia/test.csv']
     
@@ -32,16 +33,19 @@ class SimulationAction:
                 continue
     
     def consume(self, file_path):
-        
         with open(file_path, "rb") as openfile:
             openfile.read()
             openfile.close()
     
     def action(self):
-        self.pull_file()
-    
-    def move_file(to_move):
-        pass
-    
-    def modify_metadata():
-        pass
+        for file_path in self.to_consume:
+            action = random.randrange(1, 11)
+            # This will consume (read) the file only
+            if action % 2 == 0:
+                with open(file_path, "rb") as csv:
+                    reader = csv.reader(file_path, delimiter=',')
+                    for row in reader:
+                        print(', '.join(row))
+                    csv.close()
+            else:
+                self.delete_file(file_path)
