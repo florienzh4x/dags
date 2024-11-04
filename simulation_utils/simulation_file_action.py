@@ -1,6 +1,4 @@
-import shutil, json, os, random, csv
-from pathlib import Path
-
+import os, random, csv
 from scanner_utils.scanner import Scanner
 
 class SimulationAction:
